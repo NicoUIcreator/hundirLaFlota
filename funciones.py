@@ -11,11 +11,11 @@ def presentacion():
 
 #--------------------------------------------------------------------------------------------------------------
 def crear_tablero(tamaño=(10,10)):
-    return np.full(tamaño, "_")
+    return np.full(tamaño, "__")
 #--------------------------------------------------------------------------------------------------------------
 def colocar_barco(barco, tablero):
     for casilla in barco:
-        tablero[casilla] = "O"
+        tablero[casilla] = "OO"
     return tablero
 #--------------------------------------------------------------------------------------------------------------
 def colocar_barcos(barcos, tablero):
@@ -24,24 +24,28 @@ def colocar_barcos(barcos, tablero):
     return tablero
 #--------------------------------------------------------------------------------------------------------------
 def disparar(casilla, tablero):
-    if tablero[casilla] == "_":
+    if tablero[casilla] == "__":
         print("Agua")
-        tablero[casilla] = "A"
-    elif tablero[casilla] == "O":
+        tablero[casilla] = "A!"
+    elif tablero[casilla] == "OO":
         print("Tocado")
-        tablero[casilla] = "X"
+        tablero[casilla] = "XX"
     else:
         print("Ya has disparado aquí")
     return tablero
 #--------------------------------------------------------------------------------------------------------------
+
+#--------------------------------------------------------------------------------------------------------------
+
 def crear_barco_random(eslora):
+
     fila_a = random.randint(0,9)
     columna_a = random.randint(0,9)
 
     orientacion = random.choice(["S","O","E","N"])
 
     barco = [(fila_a, columna_a)]
-#--------------------------------------------------------------------------------------------------------------
+
     while len(barco) < eslora:
         match orientacion:
             case "O":
@@ -56,4 +60,11 @@ def crear_barco_random(eslora):
 
     return barco
 
-#--------------------------------------------------------------------------------------------------------------
+barcos = {"yatch": 4,
+          "cruce": 3,
+          "velero": 2,
+          "optimis": 1}
+
+def eslora():
+    for k,v in barcos.items():
+        print(v)
