@@ -1,12 +1,22 @@
 import numpy as np
 import random
 
+from PIL import Image
+import matplotlib.pyplot as plt
+
+
+
+
 #--------------------------------------------------------------------------------------------------------------
 
 def presentacion():
     print("Hundiendo la Flota")
     nombre=input("Cual es tu nombre Capitan?\n\n\n").upper()
     print(f"El juego acaba de iniciar, BIENVENIDO CAPITAN {nombre}!\n\n Hemos generado 2 tableros Aleatorios con 4 barcos para cada participante.\n El juego te ira guiando mediante Prints e Inputs!\n\n MUCHA SUERTE")
+
+    
+    
+    
 
 
 #--------------------------------------------------------------------------------------------------------------
