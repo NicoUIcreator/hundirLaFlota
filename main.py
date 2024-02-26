@@ -1,9 +1,8 @@
 
 import funciones as f
 import numpy as np
-import random
-from PIL import Image
-import matplotlib.pyplot as plt
+
+
 
 
 
@@ -55,22 +54,23 @@ while True:
         f.mostrarOculto(tableroMaquina)
 
 
-        while np.any(tableroUsuario == "OO") or np.any(tableroMaquina == "OO"):
-
+        while (np.any(tableroUsuario == "OO")) or (np.any(tableroMaquina == "OO")):
+      
 
             f.turnoUsuario(tableroMaquina)
 
             f.turnoMaquina(tableroUsuario)
 
 
-            if np.any(tableroUsuario != "OO"):
+            if (np.any(tableroUsuario != "OO")):
                  print("perdiste! te han hundido los barcos!")
                  break
-            elif np.any(tableroMaquina != "OO"):
+            elif (np.any(tableroMaquina != "OO")):
                  print("GANASTE!!")
                  break
 
             f.mostrarUsuario(tableroUsuario)
+            continue
 
 
     if numero==2:

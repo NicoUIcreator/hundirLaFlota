@@ -28,7 +28,7 @@ def presentacion():
     print("Hundiendo la Flota")
     nombre=input("Cual es tu nombre Capitan?\n\n\n").upper()
     print(f"El juego acaba de iniciar, BIENVENIDO CAPITAN {nombre}!\n\n Hemos generado 2 tableros Aleatorios con 10 barcos para cada participante.\n El juego te ira guiando mediante Prints e Inputs!\n\n MUCHA SUERTE")
-    
+    return nombre
 
 #--------------------------------------------------------------------------------------------------------------
 def crear_tablero(tamaño=(10,10)):
@@ -252,27 +252,36 @@ def crearJuego(x:dict,tablero):
 
 
 def turnoUsuario(tableroMaquina):
-    print("\nTurno del Usuario:")
+    while (np.any(tableroMaquina == "OO")):
+        print("\nTurno del Usuario:")
+        mostrarOculto(tableroMaquina)
     
-    fila = int(input("Ingrese la fila para disparar: "))
-    columna = int(input("Ingrese la columna para disparar: "))
-    if tableroMaquina[fila, columna] == "OO":
-        print("¡Has golpeado un barco!")
-        tableroMaquina[fila, columna] = "X!"
-    else:
-        print("¡Agua!")
-        tableroMaquina[fila, columna] = "AA"
-    return tableroMaquina
+        fila = int(input("Ingrese la fila para disparar: "))
+        columna = int(input("Ingrese la columna para disparar: "))
+        if tableroMaquina[fila, columna] == "OO":
+            print("¡Has golpeado un barco!")
+            tableroMaquina[fila, columna] = "X!"
+            continue
+        
+        else:
+            print("¡Agua!")
+            tableroMaquina[fila, columna] = "AA"
+        return tableroMaquina
+        
 
 
 def turnoMaquina(tableroUsuario):
-    print("\nTurno de la Máquina:")
-    filaRandom=random.randint(0,9)
-    columnaRandom=random.randint(0,9)
-    if tableroUsuario[filaRandom, columnaRandom] == "OO":
-        print("La máquina ha golpeado uno de tus barcos!")
-        tableroUsuario[filaRandom, columnaRandom] = "X!"
-    else:
-        print("La máquina ha disparado al agua.")
-        tableroUsuario[filaRandom, columnaRandom] = "AA"
-    return tableroUsuario
+    while (np.any(tableroUsuario == "OO")):
+
+        print("\nTurno de la Máquina:")
+        filaRandom=random.randint(0,9)
+        columnaRandom=random.randint(0,9)
+
+        if tableroUsuario[filaRandom, columnaRandom] == "OO":
+            print("La máquina ha golpeado uno de tus barcos!")
+            tableroUsuario[filaRandom, columnaRandom] = "X!"
+            continue
+        else:
+            print("La máquina ha disparado al agua.")
+            tableroUsuario[filaRandom, columnaRandom] = "AA"
+        return tableroUsuario
