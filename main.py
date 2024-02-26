@@ -52,43 +52,34 @@ while True:
         print(tableroUsuario)
         print("-----------------------------------------------------------------------------------------------------------")
 
-        def OCULTO(tableroMaquina):
-             
-            print("Tablero de la Máquina:")
-            tableroOculto = np.where(tableroMaquina == 1, 0, tableroMaquina)
-            return print(tableroOculto)
-        
-        OCULTO(tableroMaquina)
+        f.mostrarOculto(tableroMaquina)
 
-        
 
-        while np.any(tableroUsuario != "OO") or np.any(tableroMaquina != "OO"):
+        while np.any(tableroUsuario == "OO") or np.any(tableroMaquina == "OO"):
+
 
             f.turnoUsuario(tableroMaquina)
 
             f.turnoMaquina(tableroUsuario)
 
-            
-            
 
-            
-
-            if np.any(tableroUsuario == "OO"):
+            if np.any(tableroUsuario != "OO"):
                  print("perdiste! te han hundido los barcos!")
                  break
-            elif np.any(tableroMaquina == "OO"):
+            elif np.any(tableroMaquina != "OO"):
                  print("GANASTE!!")
                  break
 
             f.mostrarUsuario(tableroUsuario)
 
 
-
     if numero==2:
         f.instrucciones()
+        continue
 
     elif numero==3:
         exit()
+
 
 
     else:

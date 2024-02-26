@@ -208,7 +208,7 @@ def mostrarUsuario(tablero):
     
 def mostrarOculto(tablero):
     print("Tablero de la Máquina:")
-    tablero_oculto = np.where(tablero == 1, 0, tablero)
+    tablero_oculto = np.where(tablero == "OO", "__", tablero)
     print(tablero_oculto)
 
 def crearBarcos():
@@ -253,7 +253,7 @@ def crearJuego(x:dict,tablero):
 
 def turnoUsuario(tableroMaquina):
     print("\nTurno del Usuario:")
-    mostrarOculto(tableroMaquina)
+    
     fila = int(input("Ingrese la fila para disparar: "))
     columna = int(input("Ingrese la columna para disparar: "))
     if tableroMaquina[fila, columna] == "OO":
