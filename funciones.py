@@ -276,6 +276,7 @@ def turnoMaquina(tableroUsuario):
         print("\nTurno de la Máquina:")
         filaRandom=random.randint(0,9)
         columnaRandom=random.randint(0,9)
+        mostrarUsuario(tableroUsuario)
 
         if tableroUsuario[filaRandom, columnaRandom] == "OO":
             print("La máquina ha golpeado uno de tus barcos!")

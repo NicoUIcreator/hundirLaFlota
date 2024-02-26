@@ -61,16 +61,18 @@ while True:
 
             f.turnoMaquina(tableroUsuario)
 
-
-            if (np.any(tableroUsuario != "OO")):
-                 print("perdiste! te han hundido los barcos!")
-                 break
-            elif (np.any(tableroMaquina != "OO")):
-                 print("GANASTE!!")
-                 break
-
-            f.mostrarUsuario(tableroUsuario)
             continue
+
+
+        if (np.any(tableroUsuario != "OO")):
+              print("perdiste! te han hundido los barcos!")
+              break
+        elif (np.any(tableroMaquina != "OO")):
+              print("GANASTE!!")
+              break
+
+        f.mostrarUsuario(tableroUsuario)
+        continue
 
 
     if numero==2:
