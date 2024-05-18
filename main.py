@@ -4,13 +4,12 @@ import numpy as np
 
 
 
-
-
 while True:
     f.menu()
     numero= int(input("que elegis?\n"))
 
     if numero ==1:
+        f.barcoNaval
 
         tableroUsuario = f.crear_tablero()
         tableroMaquina = f.crear_tablero()
@@ -87,11 +86,3 @@ while True:
     else:
             print("tiene que ser una opcion del Menu!\n")
     break
-#tablero = f.crearTablero()
-
-#barco1= f.colocarBarco()
-#barco2= f.colocarBarco()
-
-#tablero = f.colocarBarco()
-
-#tablero = f.disparo()

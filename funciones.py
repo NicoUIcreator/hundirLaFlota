@@ -10,6 +10,7 @@ def menu():
     print("1. Jugar")
     print("2. Ver instrucciones")
     print("3. Salir del juego\n")
+    barco2()
     
 
 def instrucciones():
@@ -28,7 +29,7 @@ def presentacion():
     print("Hundiendo la Flota")
     nombre=input("Cual es tu nombre Capitan?\n\n\n").upper()
     print(f"El juego acaba de iniciar, BIENVENIDO CAPITAN {nombre}!\n\n Hemos generado 2 tableros Aleatorios con 10 barcos para cada participante.\n El juego te ira guiando mediante Prints e Inputs!\n\n MUCHA SUERTE")
-    return nombre
+    print(barcoNaval())
 
 #--------------------------------------------------------------------------------------------------------------
 def crear_tablero(tamaño=(10,10)):
@@ -289,4 +290,22 @@ def turnoMaquina(tableroUsuario):
         return tableroUsuario,mostrarUsuario(tableroUsuario)
     
     #def soloNumeros(numero):
-        
+def barcoNaval():
+    return print('''                
+                      |==|  |==|  |==|
+                    __|__|__|__|__|__|_
+                __|___________________|___
+            __|__[]__[]__[]__[]__[]__[]__|___
+            |............................o.../
+            \.............................../
+        ,~')_,~')_,~')_,~')_,~')_,~')_,~')/,~')_)''')
+
+def barco2():
+    return print(''' .  o ..
+ o . o o.o
+      ...oo
+        __[]__
+     __|_o_o_o\__
+     \""""""""""/
+      \. ..  . /
+ ^^^^^^^^^^^^^^^^^^^^''')
